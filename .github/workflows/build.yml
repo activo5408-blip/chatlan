@@ -1,5 +1,7 @@
 name: Compilar ChatLAN (Windows)
 
+# Se puede disparar a mano desde la pestaña "Actions" de GitHub, o
+# automáticamente cada vez que subís cambios a la rama principal.
 on:
   workflow_dispatch:
   push:

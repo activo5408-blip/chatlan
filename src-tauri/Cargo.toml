@@ -1,0 +1,26 @@
+[package]
+name = "chatlan"
+version = "2.0.0"
+description = "ChatLAN - Chat P2P de bandeja del sistema para red local"
+authors = ["ChatLAN"]
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-single-instance = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-clipboard-manager = "2"
+tauri-plugin-opener = "2"
+tauri-plugin-autostart = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+if-addrs = "0.13"
+image = "0.25"
+base64 = "0.22"
+
+
