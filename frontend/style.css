@@ -576,3 +576,26 @@ html, body {
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   display: block; max-width: 280px;
 }
+
+
+/* ChatLAN - resize zones */
+.resize-zone {
+  position: fixed;
+  z-index: 99999;
+}
+.resize-zone.top,
+.resize-zone.bottom { left: 8px; right: 8px; height: 6px; }
+.resize-zone.top { top: 0; cursor: ns-resize; }
+.resize-zone.bottom { bottom: 0; cursor: ns-resize; }
+.resize-zone.left,
+.resize-zone.right { top: 8px; bottom: 8px; width: 6px; }
+.resize-zone.left { left: 0; cursor: ew-resize; }
+.resize-zone.right { right: 0; cursor: ew-resize; }
+.resize-zone.tl,
+.resize-zone.tr,
+.resize-zone.bl,
+.resize-zone.br { width: 12px; height: 12px; }
+.resize-zone.tl { top: 0; left: 0; cursor: nwse-resize; }
+.resize-zone.tr { top: 0; right: 0; cursor: nesw-resize; }
+.resize-zone.bl { bottom: 0; left: 0; cursor: nesw-resize; }
+.resize-zone.br { bottom: 0; right: 0; cursor: nwse-resize; }

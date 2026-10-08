@@ -876,13 +876,27 @@ listen("notif-open-chat", (e) => {
   openChat(peer);
 });
 
-const resizeHandle = document.getElementById("resizeHandle");
-if (resizeHandle) {
-  resizeHandle.addEventListener("mousedown", async (e) => {
+// Window resize zones
+const resizeDirections = {
+  top: "Top",
+  bottom: "Bottom",
+  left: "Left",
+  right: "Right",
+  tl: "TopLeft",
+  tr: "TopRight",
+  bl: "BottomLeft",
+  br: "BottomRight"
+};
+
+Object.entries(resizeDirections).forEach(([name, direction]) => {
+  const zone = document.createElement("div");
+  zone.className = `resize-zone ${name}`;
+  document.body.appendChild(zone);
+  zone.addEventListener("mousedown", async (e) => {
     e.preventDefault();
-    try { await win.startResizeDragging("BottomRight"); } catch (err) {}
+    try { await win.startResizeDragging(direction); } catch (err) {}
   });
-}
+});
 
 // Audio notes
 let mediaRecorder = null;

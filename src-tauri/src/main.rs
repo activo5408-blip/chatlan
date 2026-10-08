@@ -435,7 +435,7 @@ async fn show_notification(
         .decorations(false)
         .always_on_top(true)
         .skip_taskbar(true)
-        .resizable(false)
+        .resizable(true)
         .build()
         .map_err(|e| e.to_string())?;
 
